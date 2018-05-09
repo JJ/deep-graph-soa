@@ -20,6 +20,8 @@ Estudios más recientes hechos por nuestro grupo revelan también ciertos efecto
 
 En general, no hay nunca una forma *natural* de representar la red subyacente en un fenómeno o un sistema, de la misma forma que no hay una forma *natural* de representar los datos de un problema para aplicarle sistemas de reconocimiento o predicción. Sin embargo, el enfoque denominado *Deep Learning* [@lecun2015deep] crea diferentes capas de procesamiento de los datos iniciales que permiten crear una representación del problema intermedia, más fácil de abordar pero sobre todo, que se lleve a cabo de forma automática. Este enfoque es el que nosotros pretendemos aplicar en este proyecto, pero trabajando sobre información reticular, es decir, en forma de red, en vez de trabajar sobre información tabular, en forma de tablas, que es lo que el enfoque Deep Learning lleva a cabo.
 
+Para llevar a cabo este enfoque se propone investigar tanto técnicas de optimización como usar técnicas de Deep Learning para cambiar representación. Ya ha habido varios investigadores que han aplicado Deep Learning a grafos, por ejemplo para predecir atascos de tráfico [@ma2015] o para predicción en redes genómicas [@park2015deep], pero se han centrado más en obviar el modelo reticular para trabajar directamente sobre datos tabulares. El contar con el grafo subyacente permitirá no sólo hacer predicciones o clasificaciones, sino también tener un modelo más efectivo del sistema que pueda usarse como ayuda en la toma de decisiones.
+
 
 
 
