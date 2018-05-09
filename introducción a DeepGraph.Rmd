@@ -9,9 +9,11 @@ output:
 bibliography: deepgraph.bib
 ---
 
-Un grafo es un conjunto de nodos y aristas que expresan algún tipo de relación entre esos nodos. Se habla de redes complejas  [@strogatz2001exploring] cuando estos grafos tienen una serie de características que implican que el sistema que representan es un sistema complejo, principalmente existencia de redes de potencias [@newman2005power] y de la característica *mundo pequeño* [@watts1998collective]. En particular, se habla de redes sociales cuando o los nodos o las aristas expresan unidades o relaciones sociales [@mislove2007measurement]. En general, las redes sociales suelen ser redes complejas, al menos cuando alcanzan un cierto tamaño. 
+Un grafo es un conjunto de nodos y aristas que expresan algún tipo de relación entre esos nodos. Se habla de redes complejas  [@strogatz2001exploring] cuando estos grafos tienen una serie de características que implican que el sistema que representan es un sistema complejo, principalmente existencia de redes de potencias [@newman2005power] y de la característica *mundo pequeño* [@watts1998collective]. En particular, se habla de redes sociales cuando o los nodos o las aristas expresan unidades o relaciones sociales [@mislove2007measurement]. En general, las redes sociales suelen ser redes complejas, al menos cuando alcanzan un cierto tamaño.
 
-El estudio de las redes complejas en todos sus aspectos sufrió una gran expansión desde finales de los 90, coincidiendo con el auge de la World Wide Web, acompañado de una gran cantidad de herramientas para analizar, visualizar y calcular en grafos.
+Con la existencia de multitud de herramientas, se han usado las redes como modelo de una gran variedad de sistemas complejos: 
+
+El estudio de las redes complejas en todos sus aspectos sufrió una gran expansión desde finales de los 90, coincidiendo con el auge de la World Wide Web. Este auge estuvo acompañado de una gran cantidad de herramientas para analizar, visualizar y calcular en grafos.
 
 ## Referencias
 
