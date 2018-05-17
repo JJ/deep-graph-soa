@@ -1,5 +1,5 @@
 ---
-title: "Introducción a las Deep Complex Networks"
+title: "Introduction to Deep Complex Networks"
 author: "JJ Merelo"
 date: "9 de mayo de 2018"
 output:
