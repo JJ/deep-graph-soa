@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Deep Complex Networks"
-author: "JJ Merelo"
+title: "Deep Complex Networks: a survey"
+author: "JJ Merelo, Bartolomé Ortiz"
 date: "17 de mayo de 2018"
 output:
   word_document: default
