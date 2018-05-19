@@ -1,0 +1,105 @@
+% https://yihui.name/knitr/demo/minimal/
+
+% Rscript -e "library(knitr); Sweave2knitr('paper.Rnw')"
+% Rscript -e "library(knitr); knit2pdf('paper.Rnw')"
+
+% In RStudio, the default weave option needs to be changed from Sweave to knitr. Go to Preferences, Sweave icon, and then change "Sweave" default to "knitr".
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{subfigure}
+
+\begin{document}
+
+<<setup, cache=FALSE,echo=FALSE>>=
+ sexoedad <- read.table("sexoedad.txt", header=TRUE)
+@ 
+
+\title{The title}
+
+\author{one author}
+\institute{affiliation}
+
+\maketitle
+
+\begin{abstract}
+the abstract the abstract the abstract the abstract 
+the abstract the abstract the abstract the abstract 
+the abstract the abstract the abstract the abstract 
+the abstract the abstract the abstract the abstract 
+\end{abstract}
+
+\section{Introduction}
+
+introduction contents introduction contents introduction contents 
+introduction contents introduction contents introduction contents 
+introduction contents introduction contents introduction contents 
+introduction contents introduction contents introduction contents.
+See Figure \ref{fig:sine}:
+
+\begin{figure}[h!tb]
+  \centering
+<<results-size, out.width='2in' , cache=FALSE,echo=FALSE>>=
+x <- seq(0,2*pi,0.01)
+y <- sin(x)
+plot(x,y,type="l")
+@ 
+\caption{Plot of the sine function}
+\label{fig:sine}
+\end{figure}
+
+
+\section{State of the art}
+
+state of the art contents state of the art contents 
+state of the art contents state of the art contents 
+state of the art contents state of the art contents \cite{unacita}
+
+\section{Results and analysis}
+\label{sec:res}
+
+explanation explanation explanation explanation explanation explanation 
+explanation explanation explanation explanation explanation explanation 
+explanation explanation explanation explanation explanation explanation 
+
+Lets show Figure \ref{fig:time}.
+
+\begin{figure}[h!tb]
+  \centering
+<<results-bf, out.width='3in' , cache=FALSE,echo=FALSE>>=
+hist(sexoedad$Peso)
+@ 
+\caption{Histogram.}
+\label{fig:time}
+\end{figure}
+
+
+\section{Conclusions}
+
+conclusions conclusions conclusions conclusions conclusions 
+conclusions conclusions conclusions conclusions conclusions 
+conclusions conclusions conclusions conclusions conclusions 
+conclusions conclusions conclusions conclusions conclusions 
+conclusions conclusions conclusions conclusions conclusions 
+
+
+\section{Acknowledgements}
+This work has been supported in part by projects BLA BLA BLA.
+
+\bibliographystyle{splncs}
+\bibliography{refs}
+
+\end{document}
+%%% Local Variables:
+%%% ispell-local-dictionary: "english"
+%%% hunspell-local-dictionary: "english"
+%%% End:% 
