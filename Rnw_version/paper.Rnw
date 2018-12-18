@@ -20,10 +20,6 @@
 
 \begin{document}
 
-<<setup, cache=FALSE,echo=FALSE>>=
- sexoedad <- read.table("sexoedad.txt", header=TRUE)
-@ 
-
 \title{The title}
 
 \author{one author}
