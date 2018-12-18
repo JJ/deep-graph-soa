@@ -3,31 +3,170 @@ title: "Deep Complex Networks: a survey"
 author: "JJ Merelo, Bartolomé Ortiz"
 date: "17 de mayo de 2018"
 output:
-  word_document: default
   pdf_document: default
   html_document:
     df_print: paged
 bibliography: deepgraph.bib
 ---
 
-A network is usually represented through a graph, that is, a set of nodes and edges that express some type of relationship between those nodes. We talk about complex networks [@strogatz2001exploring] when these graphs have a variety of characteristics which imply that the system they represent is a complex system: mainly, the existence of power networks [@newman2005power] and the *small world* feature [@watts1998collective]. In particular, we refer to social networks when nodes or edges express groups or social relations [@mislove2007measurement]. In general, social networks are often complex networks, at least when they reach a certain size; due to, during the growth of a social network, a phase change occurs that makes these complex network features emerge. In this project we propose to study complex networks with an unified approach and common tools, so we will try to define exactly what is our main interest.
+A network is usually represented through a graph, that is, a set of
+nodes and edges that express some type of relationship between those
+nodes. We talk about complex networks [@strogatz2001exploring] when
+these graphs have a variety of characteristics which imply that the
+system they represent is a complex system: mainly, the existence of
+power laws [@newman2005power] and the *small world* feature
+[@watts1998collective]. In particular, we refer to social networks
+when nodes or edges express groups or social relations
+[@mislove2007measurement]. In general, social networks are often
+complex networks, at least when they reach a certain size; due to,
+during the growth of a social network, a phase change occurs that
+makes these complex network features emerge. In this project we
+propose to study complex networks with an unified approach and common
+tools, so we will try to define exactly what is our main interest.
 
-The fact that they behave as complex systems entails a series of consequences with respect to their resistance to attacks [@albert2000error] and growth patterns [@newman2005power], as well as the creation of mesostructures and common patterns [@milo2002network] and transitions of phase [@milo2002network] preceded by a reached critical state, generally achieve by self-organization. This state of self-organized criticality [@bak2013nature] is precisely in the vicinity of the phase changes that interest us in this research project. Self-organization explains that many natural systems are in this critical state which causes the existence of power laws, but also other phenomena such as the so-called * pink noise * and long-distance correlations between different events.
+The fact that they behave as complex systems entails a series of
+consequences with respect to their resistance to attacks
+[@albert2000error] and growth patterns [@newman2005power], as well as
+the creation of mesostructures and common patterns [@milo2002network]
+and transitions of phase [@milo2002network] preceded by a reached
+critical state, generally achieve by self-organization. This state of
+self-organized criticality [@bak2013nature] is precisely in the
+vicinity of the phase changes that interest us in this research
+project. Self-organization explains that many natural systems are in
+this critical state which causes the existence of power laws, but also
+other phenomena such as the so-called * pink noise * and long-distance
+correlations between different events. 
 
-The study of complex networks and all its features underwent a great expansion since the end of the 90s, as the same time as the rise of the World Wide Web. This boom was accompanied by a large number of tools to analyze, visualize and calculate in graphs. With the existence of a multitude of tools, networks have been used as a model for a great variety of complex systems: genomics [@park2015deep], cancer diagnosis [@roullier2010graph], transport network models [@ma2015] and traffic regulation systems with traffic lights [@goel2017] or the connectome or human brain connection patterns [@sporns2005human]; critical status and self-organizing models have been detected in a large number of systems, from dating networks [@leydesdorff2018discontinuities, @benjafield2017between], to software development teams [@gorshenev2004punctuated], both of which are two acknowledged creation's processes whose criticality has also been examined by different authors [@tadic2017mechanisms]; these processes have also been discover in air pollution [@shi2009self] and network traffic [@nagel1996network]. However, in general, there are no tools to model, analyze, visualize and process these systems in a unified way, neither in the same terminology, nor in the way to find, based on the evidence or indications of emerging behavior, the underlying model that allows a better understanding of the system or transfer the models from an environment such as social networks to different environments such as air pollution models or genomics; in works like [@gd2012] different types of biological networks are reconstructed using a series of autocorrelation and topological indexes.
+The study of complex networks and all its features underwent a great
+expansion since the end of the 90s, at the same time as the rise of
+the World Wide Web. This boom was accompanied by a large number of
+tools to analyze, visualize and calculate in graphs. With the
+existence of a multitude of tools, networks have been used as a model
+for a great variety of complex systems: genomics [@park2015deep],
+cancer diagnosis [@roullier2010graph], transport network models
+[@ma2015] and traffic regulation systems with traffic lights
+[@goel2017] or the connectome or human brain connection patterns
+[@sporns2005human]; critical status and self-organizing models have
+been detected in a large number of systems, from dating networks
+[@leydesdorff2018discontinuities, @benjafield2017between], to software
+development teams [@gorshenev2004punctuated], both of which are two
+acknowledged creation's processes whose criticality has also been
+examined by different authors [@tadic2017mechanisms]; these processes
+have also been discover in air pollution [@shi2009self] and network
+traffic [@nagel1996network]. However, in general, there are no tools
+to model, analyze, visualize and process these systems in a unified
+way, neither in the same terminology, nor in the way to find, based on
+the evidence or indications of emerging behavior, the underlying model
+that allows a better understanding of the system or transfer the
+models from an environment such as social networks to different
+environments such as air pollution models or genomics; in works like
+[@gd2012] different types of biological networks are reconstructed
+using a series of autocorrelation and topological indexes. 
 
-In the past, this project's applicants have applied network theory to multiple fields. The first use of complex networks in a system's  analysis was done on the network of coauthors in the evolutionary computing's field [@redes-arxiv, @ec-network-2006, @merelo2007bce], the network of web pages of the companies of the IBEX [@ibex2015], doctoral theses in different areas, such as bibliometrics [@lopez2006analisis] or blogs in that same area [@TORRESSALINAS2011168]; even the network of passes of the Spanish soccer team [@futbol2005, @futbol2011]. In these two works, computational tools and similar analysis' measures were used, but there were several challenges that needed an ad hoc solution: the extraction of data and the assignment of properties and elements of the original systems to a graph on which we could carry out the analysis. Any system has multiple elements, and although in a network of passes it may seem obvious that the players must be the nodes and pass the edges, other combinations, such as areas of the field or the type of player, are a priori possible. The collection of information is totally ad hoc, and includes heuristics to recognize players or *scraping* tools to extract information from web pages. Team members also have experience in the area of ​​metabolomics [@granados2017p1].
 
-More recent studies done by our group reveal certain network effects too [@wikipedia17], but without the complex network from which they emerge being evident or clear. For example, in studies of code repositories [@soc17] there are effects of self-organized criticality even if there are only one, or a small number of users. It is necessary, therefore, to carry out some type of systematic study of different descriptions related to the system to choose the network model that best explains the effects that are observed. In the study on different repositories [@repo17], effects of this organized criticality are found, but the network models start from different assumptions; however, in studies such as Herráiz et al. [@Herraiz08], long-distance correlations are not found and this can be due to both the representation of the model and the time scale considered.
+<-- This was "This project's applicants". It will probably have to be
+expanded with all kinds of applications -->
 
-In general, there is not a *natural* way to represent the underlying network in a phenomenon or a system, in the same way that there is no *natural* way to represent the data of a problem to apply recognition or prediction systems. However, the approach called *Deep Learning* [@lecun2015deep] creates different layers of processing the initial data that allow the creation of a representation for the intermediate problem, easier to tackle but above all, to be carried out automatically.
-This approach is what we intend to apply for this project, but working on reticular information (web-like shape)instead of working on tabular information (table shape) which is what the Deep Learning approach carries out; this approach continues from the one used in EphemeCH project [@ECTA2015cotta] and focuses on one aspect, the graphs, the same topic that will be treated in the future project:DeepBio (provisionally conceded by the Ministry). In any case, the optimization approach has been applied by our group to the optimization of neural networks, a type of graph that behaves as a complex network in some cases, in a line of research that began in the early 90s [@glvq95] and has continued to the present [@castilloCEC99, @parras2016radial]. The creation of several *layers* is a project for processing and optimization which is widely proposed in the field of Deep Learning in ourdays, as it is done in jobs such as [@zhu2012], where they stack several data dimensions with the object to jointly analyze the metabolomic and transcriptomic networks of cellular regulation.
+Network theory has been applied to multiple fields. The first use of
+complex networks in a system's  analysis was done on the network of
+coauthors in the evolutionary computing's field [@redes-arxiv,
+@ec-network-2006, @merelo2007bce], the network of web pages of the
+companies of the IBEX [@ibex2015], doctoral theses in different areas,
+such as bibliometrics [@lopez2006analisis] or blogs in that same area
+[@TORRESSALINAS2011168]; even the network of passes of the Spanish
+soccer team [@futbol2005, @futbol2011]. In these two works,
+computational tools and similar analysis' measures were used, but
+there were several challenges that needed an ad hoc solution: the
+extraction of data and the assignment of properties and elements of
+the original systems to a graph on which we could carry out the
+analysis. Any system has multiple elements, and although in a network
+of passes it may seem obvious that the players must be the nodes and
+pass the edges, other combinations, such as areas of the field or the
+type of player, are a priori possible. The collection of information
+is totally ad hoc, and includes heuristics to recognize players or
+*scraping* tools to extract information from web pages. Team members
+also have experience in the area of ​​metabolomics [@granados2017p1]. 
 
-In this project we would try to apply that to the case of graphs and the modeling of systems that can be represented by graphs. Moreover, by applying Deep Learning to environments with large amounts of data, new paradigms have been found that have allowed for much more advanced classification and learning tasks than the previous generation's ones. Our Deep Graph's approach also aims to encourage this type of development.
+More recent studies done by our group reveal certain network effects
+too [@wikipedia17], but without the complex network from which they
+emerge being evident or clear. For example, in studies of code
+repositories [@soc17] there are effects of self-organized criticality
+even if there are only one, or a small number of users. It is
+necessary, therefore, to carry out some type of systematic study of
+different descriptions related to the system to choose the network
+model that best explains the effects that are observed. In the study
+on different repositories [@repo17], effects of this organized
+criticality are found, but the network models start from different
+assumptions; however, in studies such as Herráiz et al. [@Herraiz08],
+long-distance correlations are not found and this can be due to both
+the representation of the model and the time scale considered. 
 
-It is remarkable that there ir not a *natural* way to visualize these information too. Apart from the existing tools in the area such as Gephi or Paje, new visualization methods have been proposed using methods such as biplot [@ torres2013use] or neural networks [@blogtalk2jj] and others that can even reflect the evolution of a complex graph [@weblogs-JNCA]; there are companies such as Graphext dedicated to the visualization in graph mode of different quantities, but in most cases they are ad hoc efforts and whose interpretation in some cases is completely separate from the underlying graph model and, therefore, does not allow to really evaluate different models or compare them. The visualization methods are also computationally complex and, in any case, may require additional optimization techniques to be executed efficiently.
+<!-- This is the crux to the project, but I don't know if it belongs -->
+<!-- in the paper --> 
+In general, there is not a *natural* way to represent the underlying
+network in a phenomenon or a system, in the same way that there is no
+*natural* way to represent the data of a problem to apply recognition
+or prediction systems. However, the approach called *Deep Learning*
+[@lecun2015deep] creates different layers of processing the initial
+data that allow the creation of a representation for the intermediate
+problem, easier to tackle but above all, to be carried out
+automatically.
 
-In order to develop this approach, it is proposed to investigate both optimization techniques and Deep Learning techniques to change the representation and a system's model using graphs. There have already been several researchers who have applied Deep Learning to graphs, for example to predict traffic jams [@ma2015] or for prediction in genomic networks [@park2015deep], but have focused more on obviating the reticular model to work directly on tabular data. Having the underlying graph will allow not only making predictions or classifications, but also having a more effective model with high availability of the system that can be used as an assitance in decision making.
+<-- Probably not good for the paper 
+This approach is what we intend to apply for this project, but working
+on reticular information (web-like shape) instead of working on tabular
+information (table shape) which is what the Deep Learning approach
+carries out; this approach continues from the one used in EphemeCH
+project [@ECTA2015cotta] and focuses on one aspect, the graphs, the
+same topic that will be treated in the future project:DeepBio
+(provisionally conceded by the Ministry). In any case, the
+optimization approach has been applied by our group to the
+optimization of neural networks, a type of graph that behaves as a
+complex network in some cases, in a line of research that began in the
+early 90s [@glvq95] and has continued to the present [@castilloCEC99,
+@parras2016radial]. The creation of several *layers* is a project for
+processing and optimization which is widely proposed in the field of
+Deep Learning in ourdays, as it is done in jobs such as [@zhu2012],
+where they stack several data dimensions with the object to jointly
+analyze the metabolomic and transcriptomic networks of cellular
+regulation. 
+
+In this project we would try to apply that to the case of graphs and
+the modeling of systems that can be represented by graphs. Moreover,
+by applying Deep Learning to environments with large amounts of data,
+new paradigms have been found that have allowed for much more advanced
+classification and learning tasks than the previous generation's
+ones. Our Deep Graph's approach also aims to encourage this type of
+development.
+
+Up to here... 
+-->
+
+It is remarkable that there ir not a *natural* way to visualize these
+information too. Apart from the existing tools in the area such as
+Gephi or Paje, new visualization methods have been proposed using
+methods such as biplot [@ torres2013use] or neural networks
+[@blogtalk2jj] and others that can even reflect the evolution of a
+complex graph [@weblogs-JNCA]; there are companies such as Graphext
+dedicated to the visualization in graph mode of different quantities,
+but in most cases they are ad hoc efforts and whose interpretation in
+some cases is completely separate from the underlying graph model and,
+therefore, does not allow to really evaluate different models or
+compare them. The visualization methods are also computationally
+complex and, in any case, may require additional optimization
+techniques to be executed efficiently. 
+
+In order to develop this approach, it is proposed to investigate both
+optimization techniques and Deep Learning techniques to change the
+representation and a system's model using graphs. There have already
+been several researchers who have applied Deep Learning to graphs, for
+example to predict traffic jams [@ma2015] or for prediction in genomic
+networks [@park2015deep], but have focused more on obviating the
+reticular model to work directly on tabular data. Having the
+underlying graph will allow not only making predictions or
+classifications, but also having a more effective model with high
+availability of the system that can be used as an assitance in
+decision making. 
 
 
 ## References
