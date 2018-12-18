@@ -1,6 +1,6 @@
 ---
 title: "Deep Complex Networks: a survey"
-author: "JJ Merelo, Bartolomé Ortiz"
+author: "JJ Merelo, Bartolome Ortiz"
 date: "17 de mayo de 2018"
 output:
   pdf_document: default
@@ -85,7 +85,7 @@ pass the edges, other combinations, such as areas of the field or the
 type of player, are a priori possible. The collection of information
 is totally ad hoc, and includes heuristics to recognize players or
 *scraping* tools to extract information from web pages. Team members
-also have experience in the area of ​​metabolomics [@granados2017p1]. 
+also have experience in the area of metabolomics [@granados2017p1]. 
 
 More recent studies done by our group reveal certain network effects
 too [@wikipedia17], but without the complex network from which they
